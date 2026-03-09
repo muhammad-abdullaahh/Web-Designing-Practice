@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome</title>
+    <link rel="stylesheet" href="registration.css">
+  </head>
+  <body>
+    <div class="welcome-card fade-in">
+      <h1 class="welcome-title">Welcome</h1>
+      <p class="lead">Registration successful — thank you for registering.</p>
+      <div id="details" class="details summary"></div>
+    </div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const details = document.getElementById('details');
+      if (!params.toString()) {
+        details.innerHTML = '<p>No data submitted.</p>';
+      } else {
+        const data = {};
+        for (const [k, v] of params) {
+          data[k] = data[k] || [];
+          data[k].push(v);
+        }
+
+        let html = '<h3>Submitted details</h3>';
+        for (const key of Object.keys(data)) {
+          const vals = data[key];
+          html += `<p><strong>${key}:</strong> `;
+          if (vals.length > 1) {
+            html += vals.map(x => `<span class="badge">${x}</span>`).join(' ');
+          } else {
+            const display = key === 'password' ? '••••••' : vals[0];
+            html += display;
+          }
+          html += '</p>';
+        }
+
+        details.innerHTML = html;
+      }
+    </script>
+  </body>
+</html>

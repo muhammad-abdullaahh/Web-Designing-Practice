@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Controls Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            color: #667eea;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        /* Checkbox Styles */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #667eea;
+        }
+
+        .checkbox-item label {
+            margin-left: 10px;
+            cursor: pointer;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* Radio Button Styles */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-item input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #667eea;
+        }
+
+        .radio-item label {
+            margin-left: 10px;
+            cursor: pointer;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* ComboBox/Select Styles */
+        .select-wrapper {
+            position: relative;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            background-color: white;
+            color: #333;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        select:hover {
+            border-color: #667eea;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        /* Output Section */
+        .output-section {
+            background: #f5f7ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 25px;
+        }
+
+        .output-title {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .output-text {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            word-break: break-word;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Form Controls Demo</h1>
+
+        <!-- Checkbox Section -->
+        <div class="section">
+            <div class="section-title">✓ Checkboxes</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="check1" name="hobbies" value="Reading" />
+                    <label for="check1">Reading</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="check2" name="hobbies" value="Gaming" />
+                    <label for="check2">Gaming</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="check3" name="hobbies" value="Cooking" />
+                    <label for="check3">Cooking</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="check4" name="hobbies" value="Sports" />
+                    <label for="check4">Sports</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Radio Button Section -->
+        <div class="section">
+            <div class="section-title">● Radio Buttons</div>
+            <div class="radio-group">
+                <div class="radio-item">
+                    <input type="radio" id="rad1" name="gender" value="Male" />
+                    <label for="rad1">Male</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="rad2" name="gender" value="Female" />
+                    <label for="rad2">Female</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="rad3" name="gender" value="Other" />
+                    <label for="rad3">Other</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ComboBox Section -->
+        <div class="section">
+            <div class="section-title">▼ Dropdown (ComboBox)</div>
+            <div class="select-wrapper">
+                <select id="country" name="country">
+                    <option value="">-- Select a Country --</option>
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Australia">Australia</option>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Japan">Japan</option>
+                    <option value="India">India</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Output Display -->
+        <div class="output-section">
+            <div class="output-title">📊 Selected Values:</div>
+            <div class="output-text" id="output">
+                Checkboxes: None selected<br />
+                Gender: Not selected<br />
+                Country: Not selected
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="buttons">
+            <button class="btn-primary" onclick="showSelections()">Check Selections</button>
+            <button class="btn-secondary" onclick="resetForm()">Reset Form</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to update selections display
+        function updateOutput() {
+            // Get checked checkboxes
+            const checkboxes = document.querySelectorAll('input[name="hobbies"]:checked');
+            const selectedHobbies = Array.from(checkboxes).map(cb => cb.value).join(', ') || 'None';
+
+            // Get selected radio button
+            const radioButtons = document.querySelectorAll('input[name="gender"]');
+            let selectedGender = 'Not selected';
+            radioButtons.forEach(rb => {
+                if (rb.checked) {
+                    selectedGender = rb.value;
+                }
+            });
+
+            // Get selected country from dropdown
+            const countrySelect = document.getElementById('country');
+            const selectedCountry = countrySelect.value || 'Not selected';
+
+            // Update output display
+            const output = document.getElementById('output');
+            output.innerHTML = `
+                <strong>Checkboxes (Hobbies):</strong> ${selectedHobbies}<br />
+                <strong>Gender:</strong> ${selectedGender}<br />
+                <strong>Country:</strong> ${selectedCountry}
+            `;
+        }
+
+        // Function to show selections
+        function showSelections() {
+            updateOutput();
+            alert('Selections updated! Check the display below.');
+        }
+
+        // Function to reset form
+        function resetForm() {
+            // Uncheck all checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+
+            // Uncheck all radio buttons
+            document.querySelectorAll('input[type="radio"]').forEach(rb => rb.checked = false);
+
+            // Reset dropdown
+            document.getElementById('country').value = '';
+
+            // Reset output
+            document.getElementById('output').innerHTML = `
+                Checkboxes: None selected<br />
+                Gender: Not selected<br />
+                Country: Not selected
+            `;
+        }
+
+        // Add event listeners for real-time updates
+        document.querySelectorAll('input[name="hobbies"], input[name="gender"], select').forEach(element => {
+            element.addEventListener('change', updateOutput);
+        });
+    </script>
+</body>
+</html>
