@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c7db7d;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 40px;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.input-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.input-card label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.input-card input[type="text"],
+.input-card input[type="password"],
+.input-card input[type="email"],
+.input-card input[type="number"],
+.input-card input[type="date"],
+.input-card input[type="time"],
+.input-card input[type="datetime-local"],
+.input-card input[type="month"],
+.input-card input[type="week"],
+.input-card input[type="url"],
+.input-card input[type="search"],
+.input-card input[type="tel"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-card input[type="text"]:focus,
+.input-card input[type="password"]:focus,
+.input-card input[type="email"]:focus,
+.input-card input[type="number"]:focus,
+.input-card input[type="date"]:focus,
+.input-card input[type="time"]:focus,
+.input-card input[type="datetime-local"]:focus,
+.input-card input[type="month"]:focus,
+.input-card input[type="week"]:focus,
+.input-card input[type="url"]:focus,
+.input-card input[type="search"]:focus,
+.input-card input[type="tel"]:focus {
+    border-color: #4a90e2;
+}
+
+.input-card input[type="color"] {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-card input[type="range"] {
+    width: 100%;
+}
+
+.input-card input[type="file"] {
+    font-size: 13px;
+}
+
+.input-card input[type="submit"],
+.input-card input[type="reset"],
+.input-card input[type="button"] {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #4a90e2;
+    color: white;
+}
+
+.input-card input[type="submit"]:hover,
+.input-card input[type="reset"]:hover,
+.input-card input[type="button"]:hover {
+    background-color: #357abd;
+}
